@@ -58,12 +58,14 @@ class LoginActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
                 if (s == userName) {
+                    val intent = Intent(this@LoginActivity,DashboardActivity2::class.java)
+                    intent.putExtra("Username",s)
                     Toast.makeText(
                         this@LoginActivity,
                         "Successfully login",
                         Toast.LENGTH_LONG
                     ).show()
-                    startActivity(Intent(this@LoginActivity, DashboardActivity2::class.java))
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this@LoginActivity, "User does not exists!", Toast.LENGTH_LONG)
                         .show()

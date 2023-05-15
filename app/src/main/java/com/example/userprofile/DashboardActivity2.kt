@@ -13,7 +13,7 @@ class DashboardActivity2 : AppCompatActivity() {
 
 
 
-        welcomeText = "Welcome " + intent.getStringExtra("username") + "!";
+        welcomeText = "Welcome " + intent.getStringExtra("Username") + "!";
         tvWelcome = findViewById(R.id.tvWelcome);
         tvWelcome.setText(welcomeText);
     }
