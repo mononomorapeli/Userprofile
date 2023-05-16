@@ -7,7 +7,9 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.view.WindowManager
+import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,26 +20,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // This is used to hide the status bar and make
-        // the splash screen as a full screen activity.
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        // we used the postDelayed(Runnable, time) method
-        // to send a message with a delayed time.
-        //Normal Handler is deprecated , so we have to change the code little bit
+        val backgroundImage: ImageView = findViewById(R.id.SplashScreenImage)
+        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.animation)
+        backgroundImage.startAnimation(slideAnimation)
 
-        // Handler().postDelayed({
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this,RegisterActivity2::class.java)
+        Handler().postDelayed({
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
-        }, 2000) // 3000 is the delayed time in milliseconds.
+        }, 3000)
 
-
-
-
-    }
-}
+    }}

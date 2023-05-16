@@ -22,9 +22,6 @@ class LoginActivity : AppCompatActivity() {
         etUsername = findViewById<EditText>(R.id.etUserName)
         etPassword = findViewById<EditText>(R.id.etPassword)
         etButton = findViewById<Button>(R.id.btnLogin)
-
-
-
         etButton.setOnClickListener {
             login(etUsername, etPassword);
         }
